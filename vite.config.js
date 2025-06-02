@@ -1,10 +1,16 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import { fileURLToPath, URL } from 'url';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/', // Ruta raíz para Netlify
+  base: '/',
   plugins: [react()],
+  resolve: {
+    alias: {
+      '@': fileURLToPath(new URL('./src', import.meta.url))
+    }
+  },
   server: {
     port: 3000,
     open: true
@@ -14,13 +20,17 @@ export default defineConfig({
     assetsDir: 'assets',
     sourcemap: true,
     emptyOutDir: true,
-    chunkSizeWarningLimit: 1600
+    chunkSizeWarningLimit: 3000,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom', 'framer-motion']
+        }
+      }
+    }
   },
   preview: {
     port: 3000,
     strictPort: true
-  },
-  optimizeDeps: {
-    include: ['react', 'react-dom', 'framer-motion']
   }
 });
