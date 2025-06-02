@@ -3,34 +3,33 @@
   "private": true,
   "version": "0.1.0",
   "type": "module",
-  "engines": {
-    "node": ">=16.0.0"
-  },
+  "homepage": "https://tu-usuario.github.io/portfolio",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview --host",
+    "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "netlify deploy --prod",
-    "netlify-dev": "netlify dev"
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "framer-motion": "^10.16.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-hook-form": "^7.57.0",
-    "react-hot-toast": "^2.5.2",
-    "react-icons": "^4.11.0"
+    "react-hot-toast": "^2.4.1",
+    "react-icons": "^4.10.1",
+    "react-intersection-observer": "^9.5.2",
+    "react-router-dom": "^6.15.0",
+    "react-simple-typewriter": "^4.0.2"
   },
   "devDependencies": {
-    "@types/react": "^18.2.33",
-    "@types/react-dom": "^18.2.14",
-    "@vitejs/plugin-react": "^4.0.3",
-    "autoprefixer": "^10.4.21",
+    "@types/node": "^20.5.7",
+    "@types/react": "^18.2.20",
+    "@types/react-dom": "^18.2.7",
+    "@vitejs/plugin-react": "^4.0.4",
+    "autoprefixer": "^10.4.15",
     "gh-pages": "^6.3.0",
-    "postcss": "^8.5.4",
-    "tailwindcss": "^3.4.17",
-    "vite": "^4.3.9"
-  },
-  "homepage": "https://DanielsEZ.github.io/portfolio"
+    "postcss": "^8.4.28",
+    "tailwindcss": "^3.3.3",
+    "vite": "^4.4.9"
+  }
 }

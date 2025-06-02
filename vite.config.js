@@ -1,14 +1,14 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
-import { fileURLToPath, URL } from 'url';
+import path from 'path';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/',
+  base: '/portfolio/',  // Cambia 'portfolio' por el nombre de tu repositorio
   plugins: [react()],
   resolve: {
     alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url))
+      '@': path.resolve(__dirname, './src')
     }
   },
   server: {
@@ -19,18 +19,6 @@ export default defineConfig({
     outDir: 'dist',
     assetsDir: 'assets',
     sourcemap: true,
-    emptyOutDir: true,
-    chunkSizeWarningLimit: 3000,
-    rollupOptions: {
-      output: {
-        manualChunks: {
-          vendor: ['react', 'react-dom', 'framer-motion']
-        }
-      }
-    }
-  },
-  preview: {
-    port: 3000,
-    strictPort: true
+    emptyOutDir: true
   }
 });

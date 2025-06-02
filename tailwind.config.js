@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-export default {
+module.exports = {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -8,7 +8,6 @@ export default {
     extend: {
       animation: {
         'float': 'float 6s ease-in-out infinite',
-        'pulse-slow': 'pulse 8s cubic-bezier(0.4, 0, 0.6, 1) infinite',
       },
       keyframes: {
         float: {
@@ -18,6 +17,7 @@ export default {
       },
       colors: {
         'space': '#0f172a',
+        'space-dark': '#020617',
         'space-light': '#1e293b',
         'primary': '#818cf8',
         'secondary': '#c4b5fd',
