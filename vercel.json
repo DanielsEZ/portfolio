@@ -19,5 +19,7 @@
     "env": {
       "NODE_VERSION": "18.x"
     }
-  }
+  },
+  "buildCommand": "npm install && npm run build",
+  "outputDirectory": "dist"
 }
