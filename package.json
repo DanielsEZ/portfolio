@@ -10,9 +10,8 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "vercel-build": "npm install && vite build",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "netlify deploy --prod"
   },
   "dependencies": {
     "framer-motion": "^10.16.4",
