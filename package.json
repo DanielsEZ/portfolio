@@ -6,9 +6,10 @@
   "homepage": "./",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build --mode production",
     "preview": "vite preview",
     "clean": "rimraf dist",
+    "vercel-build": "npm run build",
     "predeploy": "npm run clean && npm run build",
     "deploy": "gh-pages -d dist -b gh-pages -m 'Deploy to GitHub Pages'"
   },
