@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.1.0",
   "type": "module",
-  "homepage": "https://danielsez.github.io/portfolio",
+  "homepage": "./",
   "scripts": {
     "dev": "vite --config vite.config.min.js",
     "build": "vite build --config vite.config.min.js",
