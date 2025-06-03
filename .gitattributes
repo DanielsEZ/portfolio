@@ -1,0 +1,10 @@
+* -diff
+* -filter
+* -text
+node_modules/** -diff -merge -export-ignore -text
+.cache/** -diff -merge -export-ignore -text
+.gitmodules -diff -merge -export-ignore -text
+.vercel/** -diff -merge -export-ignore -text
+
+# Forzar LF (salto de línea estilo Unix) para todos los archivos de texto
+* text=auto eol=lf
