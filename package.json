@@ -5,9 +5,9 @@
   "type": "module",
   "homepage": "./",
   "scripts": {
-    "dev": "vite --config vite.config.min.js",
-    "build": "vite build --config vite.config.min.js",
-    "preview": "vite preview --config vite.config.min.js",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
     "clean": "rimraf dist",
     "predeploy": "npm run clean && npm run build",
     "deploy": "gh-pages -d dist -b gh-pages -m 'Deploy to GitHub Pages'"
