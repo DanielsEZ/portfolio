@@ -7,9 +7,9 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build --mode production",
-    "preview": "vite preview",
+    "preview": "vite preview --port 4173",
     "clean": "rimraf dist",
-    "vercel-build": "npm run build",
+    "vercel-build": "vite build --mode production",
     "predeploy": "npm run clean && npm run build",
     "deploy": "gh-pages -d dist -b gh-pages -m 'Deploy to GitHub Pages'"
   },

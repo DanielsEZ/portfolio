@@ -10,7 +10,7 @@ export default defineConfig(({ command, mode }) => {
   const isProduction = mode === 'production';
   
   return {
-    base: isProduction ? '/' : '/',
+    base: isProduction ? './' : '/',
     plugins: [react()],
     resolve: {
       alias: {
@@ -30,6 +30,9 @@ export default defineConfig(({ command, mode }) => {
       chunkSizeWarningLimit: 1000,
       rollupOptions: {
         output: {
+          entryFileNames: 'assets/[name]-[hash].js',
+          chunkFileNames: 'assets/[name]-[hash].js',
+          assetFileNames: 'assets/[name]-[hash][extname]',
           manualChunks: {
             react: ['react', 'react-dom', 'react-router-dom'],
             framer: ['framer-motion'],
