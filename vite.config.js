@@ -4,7 +4,7 @@ import path from 'path';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/portfolio/',  // Cambia 'portfolio' por el nombre de tu repositorio
+  base: './',  // Cambiado a ruta relativa
   plugins: [react()],
   resolve: {
     alias: {
@@ -18,7 +18,15 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
-    sourcemap: true,
-    emptyOutDir: true
+    sourcemap: false,
+    emptyOutDir: true,
+    chunkSizeWarningLimit: 1600,
+    rollupOptions: {
+      output: {
+        assetFileNames: 'assets/[name]-[hash][extname]',
+        chunkFileNames: 'assets/[name]-[hash].js',
+        entryFileNames: 'assets/[name]-[hash].js',
+      }
+    }
   }
 });
