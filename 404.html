@@ -4,9 +4,21 @@
     <meta charset="utf-8">
     <title>Redirigiendo...</title>
     <script>
-      // Redirigir a la página principal
-      sessionStorage.redirect = location.href.split('/').slice(3).join('/');
-      location.replace('/portfolio/');
+      // Obtener la ruta actual
+      const path = window.location.pathname;
+      // Redirigir a la página principal con hash si es necesario
+      if (path.includes('proyectos')) {
+        window.location.href = '/portfolio/#' + path.split('/').pop();
+      } else if (path.includes('contacto')) {
+        window.location.href = '/portfolio/#contacto';
+      } else if (path.includes('sobre-mi')) {
+        window.location.href = '/portfolio/#sobre-mi';
+      } else if (path.includes('habilidades')) {
+        window.location.href = '/portfolio/#habilidades';
+      } else {
+        // Redirigir a la página principal por defecto
+        window.location.href = '/portfolio/';
+      }
     </script>
   </head>
   <body>
