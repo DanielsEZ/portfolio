@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
 import StarsBackground from './components/StarsBackground';
 import Header from './components/Header';
@@ -10,6 +11,7 @@ import Contact from './components/Contact';
 import { Toaster } from 'react-hot-toast';
 
 function App() {
+  const { t } = useTranslation();
   // Efecto para el cursor personalizado
   useEffect(() => {
     const cursor = document.createElement('div');
@@ -61,69 +63,79 @@ function App() {
   return (
     <div className="min-h-screen overflow-x-hidden">
       <Toaster position="top-right" />
-      <StarsBackground />
-      <Header />
-      
-      <AnimatePresence mode="wait">
+      <div className="min-h-screen relative overflow-hidden">
+        {/* Deshabilitar temporalmente AnimatePresence para depuración */}
+        <StarsBackground />
+        <Header />
         <main>
-          <Hero />
-          <About />
-          <Projects />
-          <Skills />
-          <Contact />
+          <section id="inicio">
+            <Hero />
+          </section>
+          <section id="sobre-mi" className="pt-24" style={{ scrollMarginTop: '100px' }}>
+            <About />
+          </section>
+          <section id="proyectos">
+            <Projects />
+          </section>
+          <section id="habilidades" className="pt-24" style={{ scrollMarginTop: '100px' }}>
+            <Skills />
+          </section>
+          <section id="contacto">
+            <Contact />
+          </section>
           
           {/* Footer */}
           <footer className="py-8 bg-space-light/50 backdrop-blur-sm border-t border-gray-800">
             <div className="container mx-auto px-4 text-center">
               <p className="text-gray-400">
-                &copy; {new Date().getFullYear()} Daniel Girón. Todos los derechos reservados.
+                {t('footer.rights', { year: new Date().getFullYear() })}
               </p>
               <p className="text-gray-500 text-sm mt-2">
-                Hecho con mucho love 
+                {t('footer.madeWith')}
               </p>
             </div>
           </footer>
         </main>
-      </AnimatePresence>
       
-      {/* Botón de volver arriba */}
-      <motion.button
-        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-        className="fixed bottom-8 right-8 p-3 bg-primary/20 backdrop-blur-sm rounded-full border border-primary/30 text-primary hover:bg-primary/30 transition-colors z-40"
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
-        aria-label="Volver arriba"
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
-        </svg>
-      </motion.button>
-      
-      {/* Efecto de partículas flotantes */}
-      {[...Array(5)].map((_, i) => (
-        <motion.div
-          key={i}
-          className="fixed rounded-full bg-white/10 backdrop-blur-sm"
-          style={{
-            width: Math.random() * 300 + 100 + 'px',
-            height: Math.random() * 300 + 100 + 'px',
-            left: Math.random() * 100 + '%',
-            top: Math.random() * 100 + '%',
-            filter: 'blur(40px)',
-            zIndex: -1,
-          }}
-          animate={{
-            x: [0, Math.random() * 200 - 100, 0],
-            y: [0, Math.random() * 200 - 100, 0],
-          }}
-          transition={{
-            duration: Math.random() * 20 + 20,
-            repeat: Infinity,
-            repeatType: 'reverse',
-            ease: 'easeInOut',
-          }}
-        />
-      ))}
+        {/* Botón de volver arriba */}
+        <motion.button
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          className="fixed bottom-8 right-8 p-3 bg-primary/20 backdrop-blur-sm rounded-full border border-primary/30 text-primary hover:bg-primary/30 transition-colors z-40"
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+          aria-label="Volver arriba"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
+          </svg>
+        </motion.button>
+        
+        {/* Efecto de partículas flotantes */}
+        {[...Array(5)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="fixed rounded-full bg-white/10 backdrop-blur-sm"
+            style={{
+              width: Math.random() * 300 + 100 + 'px',
+              height: Math.random() * 300 + 100 + 'px',
+              left: Math.random() * 100 + '%',
+              top: Math.random() * 100 + '%',
+              filter: 'blur(40px)',
+              zIndex: -1,
+            }}
+            animate={{
+              x: [0, Math.random() * 200 - 100, 0],
+              y: [0, Math.random() * 200 - 100, 0],
+            }}
+            transition={{
+              duration: Math.random() * 20 + 20,
+              repeat: Infinity,
+              repeatType: 'reverse',
+              ease: 'easeInOut',
+            }}
+          />
+        ))}
+      </div>
     </div>
   );
 }

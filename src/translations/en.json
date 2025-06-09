@@ -1,0 +1,102 @@
+{
+  "header": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "skills": "Skills",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Hi, I'm {{name}}",
+    "subtitle": "Full Stack Developer passionate about creating amazing digital experiences and exploring new technologies.",
+    "cta": "Contact Me"
+  },
+  "about": {
+    "title": "{{text}} {{highlight}}",
+    "titleText": "About",
+    "titleHighlight": "Me",
+    "description": "Passionate developer with experience in creating modern and scalable web applications. I love learning new technologies and facing technical challenges.",
+    "skills": {
+      "frontend": {
+        "title": "Frontend Development",
+        "description": "Development of modern and responsive user interfaces with React, Tailwind CSS, and more."
+      },
+      "backend": {
+        "title": "Backend Development",
+        "description": "Building robust and scalable APIs with C#, .NET, and SQL Server databases."
+      }
+    },
+    "story": {
+      "title": "My Story",
+      "p1": "My journey in web development began several years ago when I discovered my passion for creating things on the internet. Since then, I've worked on various projects that have allowed me to grow as a developer and acquire new skills.",
+      "p2": "When I'm not programming, I like to stay up to date with the latest technologies, contribute to open-source projects, and share my knowledge with the community."
+    }
+  },
+  "projects": {
+    "titleText": "My",
+    "titleHighlight": "Projects",
+    "subtitle": "Some of my recent work. Each one represents a unique challenge and an opportunity to learn something new.",
+    "seeMore": "Interested in seeing more of my work?",
+    "viewOnGitHub": "View more on GitHub",
+    "viewProjects": "View Projects",
+    "viewCode": "View Code",
+    "technologies": {
+      "dataStructures": "Data Structures",
+      "textFiles": "Text Files"
+    },
+    "apiFerreteria": {
+      "title": "Hardware Store API",
+      "description": "RESTful API for inventory and sales management of a hardware store with JWT authentication and Swagger documentation."
+    },
+    "sistemaNominas": {
+      "title": "Payroll Management System",
+      "description": "Desktop application for employee payroll management with different access levels and report generation."
+    },
+    "sistemaEducativo": {
+      "title": "Educational System",
+      "description": "A school system program where you can assign students and teachers and perform CRUD operations."
+    }
+  },
+  "skills": {
+    "titleText": "My",
+    "titleHighlight": "Skills",
+    "subtitle": "Technologies and tools I regularly work with to create modern and scalable web applications.",
+    "categories": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "database": "Databases",
+      "versionControl": "Version Control"
+  },
+  "approach": {
+    "title": "My Approach",
+    "description": "I am passionate about clean, maintainable, and scalable software development. I'm always looking to learn new technologies and best practices to improve my skills. I believe in well-documented code, thorough testing, and effective team collaboration."
+    }
+  },
+  "contact": {
+    "titleText": "Contact ",
+    "titleHighlight": "Me",
+    "subtitle": "Do you have a project in mind or just want to say hi? Feel free to contact me, I'll be happy to help you.",
+    "contactInfo": "Contact Information",
+    "followMe": "Follow me on",
+    "downloadCV": "Download CV",
+    "spanishPDF": "Spanish (PDF)",
+    "englishPDF": "English (PDF)",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "location": "Location",
+      "message": "Message",
+      "send": "Send Message"
+    },
+    "success": "Message sent successfully! I'll get back to you soon.",
+    "error": "There was an error sending the message. Please try again later."
+  },
+  "footer": {
+    "rights": "© {{year}} Daniel Girón. All rights reserved.",
+    "madeWith": "Made with ❤️"
+  },
+  "language": {
+    "en": "English",
+    "es": "Spanish"
+  }
+}

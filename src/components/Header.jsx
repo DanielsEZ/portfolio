@@ -1,7 +1,11 @@
 import { motion } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { useTranslation } from 'react-i18next';
+import LanguageSwitcher from './common/LanguageSwitcher';
 
 const Header = () => {
+  const { t } = useTranslation();
+  
   const socialLinks = [
     {
       name: 'GitHub',
@@ -23,6 +27,15 @@ const Header = () => {
     },
   ];
 
+  // Navegación con claves de traducción
+  const navItems = [
+    { key: 'home', id: 'inicio' },
+    { key: 'about', id: 'sobre-mi' },
+    { key: 'projects', id: 'proyectos' },
+    { key: 'skills', id: 'habilidades' },
+    { key: 'contact', id: 'contacto' },
+  ];
+
   return (
     <header className="fixed w-full z-50 bg-space/80 backdrop-blur-sm">
       <div className="container mx-auto px-6 py-4 flex justify-between items-center">
@@ -39,25 +52,42 @@ const Header = () => {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.5 }}
-          className="hidden md:flex space-x-8"
+          className="hidden md:flex items-center space-x-8"
         >
-          {['Inicio', 'Sobre Mí', 'Proyectos', 'Habilidades', 'Contacto'].map((item, index) => (
-            <a
-              key={item}
-              href={`#${item.toLowerCase().replace(' ', '-')}`}
-              className="text-gray-300 hover:text-white transition-colors duration-300"
+          {navItems.map((item) => (
+            <button
+              key={item.key}
+              onClick={() => {
+                if (item.id === 'inicio') {
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                } else {
+                  const element = document.getElementById(item.id);
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }
+              }}
+              className="text-gray-300 hover:text-white transition-colors duration-300 bg-transparent border-none cursor-pointer p-0 text-sm font-medium"
             >
-              {item}
-            </a>
+              {t(`header.${item.key}`)}
+            </button>
           ))}
+          
+          {/* Selector de idioma */}
+          <div className="ml-4">
+            <LanguageSwitcher />
+          </div>
         </motion.nav>
 
         <motion.div
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="flex space-x-4"
+          className="flex items-center space-x-4"
         >
+          <div className="md:hidden mr-2">
+            <LanguageSwitcher />
+          </div>
           {socialLinks.map((link) => (
             <a
               key={link.name}

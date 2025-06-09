@@ -1,17 +1,20 @@
 import { motion } from 'framer-motion';
 import { FaEnvelope, FaMapMarkerAlt, FaGithub, FaLinkedin, FaTwitter, FaFileDownload } from 'react-icons/fa';
+import { useTranslation, Trans } from 'react-i18next';
 
 const Contact = () => {
+  const { t } = useTranslation();
+  
   const contactInfo = [
     {
       icon: <FaEnvelope className="w-6 h-6" />,
-      title: 'Correo Electrónico',
+      title: t('contact.form.email'),
       value: 'danielgd747@gmail.com',
       link: 'mailto:danielgd747@gmail.com',
     },
     {
       icon: <FaMapMarkerAlt className="w-6 h-6" />,
-      title: 'Ubicación',
+      title: t('contact.form.location'),
       value: 'Ciudad de Guatemala, Guatemala',
       link: 'https://maps.google.com',
     },
@@ -38,6 +41,7 @@ const Contact = () => {
     }
   ];
 
+
   return (
     <section id="contacto" className="section relative overflow-hidden py-20">
       <div className="container mx-auto px-4">
@@ -48,10 +52,15 @@ const Contact = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">Contácta<span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">me</span></h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            {t('contact.titleText')}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
+              {t('contact.titleHighlight')}
+            </span>
+          </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto my-4"></div>
           <p className="text-gray-300 max-w-3xl mx-auto">
-            ¿Tienes un proyecto en mente o simplemente quieres saludar? No dudes en contactarme, estaré encantado de ayudarte.
+            {t('contact.subtitle')}
           </p>
         </motion.div>
 
@@ -62,7 +71,7 @@ const Contact = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="max-w-2xl mx-auto bg-gray-900/50 backdrop-blur-sm rounded-xl p-8 border border-gray-800"
         >
-          <h3 className="text-2xl font-semibold mb-8 text-center">Información de Contacto</h3>
+          <h3 className="text-2xl font-semibold mb-6 text-center">{t('contact.followMe')}</h3>
           <div className="space-y-6">
             {contactInfo.map((item, index) => (
               <a
@@ -86,8 +95,8 @@ const Contact = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {/* CV en Español */}
               <motion.a
-                href="/cv-es.pdf"
-                download
+                href="https://danielsez.github.io/portfolio/assets/cv-es.pdf"
+                download="cv-es.pdf"
                 className="flex items-center space-x-3 p-4 rounded-lg bg-gradient-to-r from-primary/10 to-secondary/10 border border-primary/20 hover:from-primary/20 hover:to-secondary/20 transition-colors group"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
@@ -96,15 +105,15 @@ const Contact = () => {
                   <FaFileDownload className="w-4 h-4" />
                 </div>
                 <div>
-                  <h4 className="text-base font-medium text-gray-200">Descargar CV</h4>
-                  <p className="text-sm text-gray-400 group-hover:text-white transition-colors">Español (PDF)</p>
+                  <h4 className="text-base font-medium text-gray-200">{t('contact.downloadCV')}</h4>
+                  <p className="text-sm text-gray-400 group-hover:text-white transition-colors">{t('contact.spanishPDF')}</p>
                 </div>
               </motion.a>
 
               {/* CV en Inglés */}
               <motion.a
-                href="/cv-en.pdf"
-                download
+                href="https://danielsez.github.io/portfolio/assets/cv-en.pdf"
+                download="cv-en.pdf"
                 className="flex items-center space-x-3 p-4 rounded-lg bg-gradient-to-r from-primary/10 to-secondary/10 border border-primary/20 hover:from-primary/20 hover:to-secondary/20 transition-colors group"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
@@ -113,8 +122,8 @@ const Contact = () => {
                   <FaFileDownload className="w-4 h-4" />
                 </div>
                 <div>
-                  <h4 className="text-base font-medium text-gray-200">Download CV</h4>
-                  <p className="text-sm text-gray-400 group-hover:text-white transition-colors">English (PDF)</p>
+                  <h4 className="text-base font-medium text-gray-200">{t('contact.downloadCV')}</h4>
+                  <p className="text-sm text-gray-400 group-hover:text-white transition-colors">{t('contact.englishPDF')}</p>
                 </div>
               </motion.a>
             </div>

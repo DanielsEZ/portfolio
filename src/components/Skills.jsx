@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { FaCode, FaServer, FaDatabase, FaCodeBranch, FaHtml5, FaCss3Alt, FaBootstrap } from 'react-icons/fa';
 import { SiJavascript, SiReact, SiTailwindcss, SiGit, SiCplusplus, SiCsharp, SiMicrosoftsqlserver, SiMicrosoft } from 'react-icons/si';
+import { useTranslation, Trans } from 'react-i18next';
 
 const skills = [
   {
@@ -63,6 +64,46 @@ const SkillBar = ({ name, level, icon }) => (
 );
 
 const Skills = () => {
+  const { t } = useTranslation();
+  
+  const skills = [
+    {
+      category: t('skills.categories.frontend'),
+      icon: <FaCode className="w-6 h-6" />,
+      items: [
+        { name: 'HTML5', icon: <FaHtml5 className="w-5 h-5 text-orange-500" />, level: 95 },
+        { name: 'CSS3', icon: <FaCss3Alt className="w-5 h-5 text-blue-500" />, level: 90 },
+        { name: 'JavaScript', icon: <SiJavascript className="w-5 h-5 text-yellow-400" />, level: 80 },
+        { name: 'React', icon: <SiReact className="w-5 h-5 text-blue-400" />, level: 70 },
+        { name: 'Bootstrap', icon: <FaBootstrap className="w-5 h-5 text-purple-600" />, level: 85 },
+        { name: 'Tailwind CSS', icon: <SiTailwindcss className="w-5 h-5 text-cyan-400" />, level: 60 },
+      ],
+    },
+    {
+      category: t('skills.categories.backend'),
+      icon: <FaServer className="w-6 h-6" />,
+      items: [
+        { name: 'C#', icon: <SiCsharp className="w-5 h-5 text-purple-600" />, level: 90 },
+        { name: 'C++', icon: <SiCplusplus className="w-5 h-5 text-blue-500" />, level: 60 },
+        { name: 'Python', icon: <span className="text-yellow-300">Py</span>, level: 90 },
+      ],
+    },
+    {
+      category: t('skills.categories.database'),
+      icon: <FaDatabase className="w-6 h-6" />,
+      items: [
+        { name: 'SQL Server', icon: <SiMicrosoftsqlserver className="w-5 h-5 text-red-500" />, level: 90 },
+        { name: 'SSMS', icon: <SiMicrosoft className="w-5 h-5 text-blue-500" />, level: 90 },
+      ],
+    },
+    {
+      category: t('skills.categories.versionControl'),
+      icon: <FaCodeBranch className="w-6 h-6" />,
+      items: [
+        { name: 'Git', icon: <SiGit className="w-5 h-5 text-orange-600" />, level: 85 },
+      ],
+    },
+  ];
   return (
     <section id="habilidades" className="section relative overflow-hidden">
       <div className="container mx-auto px-4">
@@ -73,10 +114,15 @@ const Skills = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">Mis <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Habilidades</span></h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            {t('skills.titleText')}{' '}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
+              {t('skills.titleHighlight')}
+            </span>
+          </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-primary to-secondary mx-auto my-4"></div>
           <p className="text-gray-300 max-w-3xl mx-auto">
-            Tecnologías y herramientas con las que trabajo regularmente para crear aplicaciones web modernas y escalables.
+            {t('skills.subtitle')}
           </p>
         </motion.div>
 
@@ -117,11 +163,9 @@ const Skills = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="mt-16 bg-gradient-to-r from-space-light/50 to-space/50 p-8 rounded-xl border border-gray-800"
         >
-          <h3 className="text-2xl font-semibold mb-4">Mi Enfoque</h3>
+          <h3 className="text-2xl font-semibold mb-4">{t('skills.approach.title')}</h3>
           <p className="text-gray-300">
-            Me apasiona el desarrollo de software limpio, mantenible y escalable. Siempre estoy buscando aprender nuevas tecnologías
-            y mejores prácticas para mejorar mis habilidades. Creo en el código bien documentado, pruebas exhaustivas y una
-            colaboración efectiva en equipo.
+            {t('skills.approach.description')}
           </p>
         </motion.div>
       </div>
