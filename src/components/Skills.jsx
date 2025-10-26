@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { FaCode, FaServer, FaDatabase, FaCodeBranch, FaHtml5, FaCss3Alt, FaBootstrap } from 'react-icons/fa';
+import { FaCode, FaServer, FaDatabase, FaCodeBranch, FaHtml5, FaCss3Alt, FaBootstrap, FaJava } from 'react-icons/fa';
 import { SiJavascript, SiReact, SiTailwindcss, SiGit, SiCplusplus, SiCsharp, SiMicrosoftsqlserver, SiMicrosoft } from 'react-icons/si';
 import { useTranslation, Trans } from 'react-i18next';
 
@@ -22,6 +22,7 @@ const skills = [
     items: [
       { name: 'C#', icon: <SiCsharp className="w-5 h-5 text-purple-600" />, level: 90 },
       { name: 'C++', icon: <SiCplusplus className="w-5 h-5 text-blue-500" />, level: 60 },
+      { name: 'Java', icon: <FaJava className="w-5 h-5 text-red-600" />, level: 75 },
       { name: 'Python', icon: <span className="text-yellow-300">Py</span>, level: 90 },
     ],
   },
@@ -80,6 +81,7 @@ const Skills = () => {
       items: [
         { name: 'C#', icon: <SiCsharp className="w-5 h-5 text-purple-600" />, level: 90 },
         { name: 'C++', icon: <SiCplusplus className="w-5 h-5 text-blue-500" />, level: 60 },
+        { name: 'Java', icon: <FaJava className="w-5 h-5 text-red-600" />, level: 75 },
         { name: 'Python', icon: <span className="text-yellow-300">Py</span>, level: 90 },
       ],
     },
