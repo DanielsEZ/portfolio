@@ -1,0 +1,10 @@
+{
+  "routes": [
+    {"path": "/proyectos"},
+    {"path": "/contacto"},
+    {"path": "/sobre-mi"},
+    {"path": "/habilidades"},
+    {"path": "/"}
+  ],
+  "custom404": true
+}

@@ -1,0 +1,102 @@
+{
+  "header": {
+    "home": "Inicio",
+    "about": "Sobre Mí",
+    "projects": "Proyectos",
+    "skills": "Habilidades",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "title": "Hola, soy {{name}}",
+    "subtitle": "Desarrollador Full Stack apasionado por crear experiencias digitales asombrosas y explorar nuevas tecnologías.",
+    "cta": "Contáctame"
+  },
+  "about": {
+    "title": "{{text}} {{highlight}}",
+    "titleText": "Sobre",
+    "titleHighlight": "Mí",
+    "description": "Apasionado desarrollador con experiencia en la creación de aplicaciones web modernas y escalables. Me encanta aprender nuevas tecnologías y enfrentar desafíos técnicos.",
+    "skills": {
+      "frontend": {
+        "title": "Desarrollo Frontend",
+        "description": "Desarrollo de interfaces de usuario modernas y responsivas con React, Tailwind CSS y más."
+      },
+      "backend": {
+        "title": "Desarrollo Backend",
+        "description": "Construcción de APIs robustas y escalables con C#, .NET y bases de datos SQL Server."
+      }
+    },
+    "story": {
+      "title": "Mi Historia",
+      "p1": "Mi viaje en el desarrollo web comenzó hace varios años cuando descubrí mi pasión por crear cosas en internet. Desde entonces, he trabajado en diversos proyectos que me han permitido crecer como desarrollador y adquirir nuevas habilidades.",
+      "p2": "Cuando no estoy programando, me gusta estar al día con las últimas tecnologías, contribuir a proyectos de código abierto y compartir mis conocimientos con la comunidad."
+    }
+  },
+  "projects": {
+    "titleText": "Mis",
+    "titleHighlight": "Proyectos",
+    "subtitle": "Algunos de mis trabajos recientes. Cada uno representa un desafío único y una oportunidad para aprender algo nuevo.",
+    "seeMore": "¿Interesado en ver más de mi trabajo?",
+    "viewOnGitHub": "Ver más en GitHub",
+    "viewProjects": "Ver Proyectos",
+    "viewCode": "Ver Código",
+    "technologies": {
+      "dataStructures": "Estructuras de Datos",
+      "textFiles": "Archivos de Texto"
+    },
+    "apiFerreteria": {
+      "title": "API Ferretería",
+      "description": "API RESTful para gestión de inventario y ventas de una ferretería con autenticación JWT y documentación Swagger."
+    },
+    "sistemaNominas": {
+      "title": "Sistema de Gestión de Nóminas",
+      "description": "Aplicación de escritorio para la gestión de nóminas de empleados con diferentes niveles de acceso y generación de reportes."
+    },
+    "sistemaEducativo": {
+      "title": "Sistema Educativo",
+      "description": "Un programa de sistema para escuelas donde puedes asignar estudiantes y profesores y realizar operaciones CRUD."
+    }
+  },
+  "skills": {
+    "titleText": "Mis",
+    "titleHighlight": "Habilidades",
+    "subtitle": "Tecnologías y herramientas con las que trabajo regularmente para crear aplicaciones web modernas y escalables.",
+    "categories": {
+      "frontend": "Frontend",
+      "backend": "Backend",
+      "database": "Bases de Datos",
+      "versionControl": "Control de Versiones"
+  },
+  "approach": {
+    "title": "Mi Enfoque",
+    "description": "Me apasiona el desarrollo de software limpio, mantenible y escalable. Siempre estoy buscando aprender nuevas tecnologías y mejores prácticas para mejorar mis habilidades. Creo en el código bien documentado, pruebas exhaustivas y una colaboración efectiva en equipo."
+    }
+  },
+  "contact": {
+    "titleText": "Contácta",
+    "titleHighlight": "me",
+    "subtitle": "¿Tienes un proyecto en mente o simplemente quieres saludar? No dudes en contactarme, estaré encantado de ayudarte.",
+    "contactInfo": "Información de Contacto",
+    "followMe": "Sígueme en",
+    "downloadCV": "Descargar CV",
+    "spanishPDF": "Español (PDF)",
+    "englishPDF": "Inglés (PDF)",
+    "form": {
+      "name": "Nombre",
+      "email": "Correo Electrónico",
+      "location": "Ubicación",
+      "message": "Mensaje",
+      "send": "Enviar Mensaje"
+    },
+    "success": "¡Mensaje enviado con éxito! Me pondré en contacto contigo pronto.",
+    "error": "Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo más tarde."
+  },
+  "footer": {
+    "rights": "© {{year}} Daniel Girón. Todos los derechos reservados.",
+    "madeWith": "Hecho con ❤️"
+  },
+  "language": {
+    "en": "Inglés",
+    "es": "Español"
+  }
+}
