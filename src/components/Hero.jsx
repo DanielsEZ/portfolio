@@ -40,7 +40,7 @@ const Hero = () => {
                 <div className="w-40 h-40 rounded-full bg-gradient-to-br from-space-light to-space border-2 border-primary/20 overflow-hidden">
                   <div className="relative w-full h-full">
                     <img 
-                      src="/images/profile.jpg" 
+                      src={`${import.meta.env.BASE_URL}images/profile.jpg`} 
                       alt="Daniel Girón" 
                       className="w-full h-full object-cover"
                       onError={handleImageError}
